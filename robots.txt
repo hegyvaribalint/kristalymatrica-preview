@@ -1,0 +1,3 @@
+# IDEIGLENES: előnézet / nem élesített változat. Élesítéskor a build felülírja.
+User-agent: *
+Disallow: /
