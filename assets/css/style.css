@@ -208,3 +208,48 @@ ul, ol { padding-left: 1.2em; }
 .cookie-title { font-weight: 800; margin-bottom: .4rem; }
 .cookie p { font-size: .9rem; }
 .cookie-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+/* ---------- Aloldal-fejléc ---------- */
+.page-hero { position: relative; padding: 2.2rem 0 3rem; background: radial-gradient(900px 400px at 90% -20%, rgba(63,224,207,.14), transparent 60%), var(--tint); }
+.page-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--grad); }
+.page-hero h1 { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 2.7rem); max-width: 22ch; }
+.page-hero .lede { margin-bottom: 0; }
+.page-hero .hero-actions { margin-bottom: 0; }
+.meta-line { color: var(--ink-soft); font-size: .9rem; margin-top: .8rem; }
+
+/* ---------- Tartalom (cikk, jogi szöveg) ---------- */
+.prose { max-width: 72ch; }
+.prose h2 { margin-top: 2.2rem; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.75rem); }
+.prose h3 { margin-top: 1.6rem; }
+.prose ul, .prose ol { margin: 0 0 1.2em; }
+.prose li { margin-bottom: .4em; }
+.prose figure { margin: 1.6rem 0; }
+.prose figure img { border-radius: var(--radius); }
+.prose figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .5rem; }
+.callout { border-left: 4px solid var(--brand); background: var(--tint); padding: 1rem 1.2rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.5rem 0; }
+.callout p:last-child { margin: 0; }
+
+/* ---------- Táblázat ---------- */
+.table-wrap { overflow-x: auto; margin: 1.2rem 0; }
+.table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.table th, .table td { text-align: left; padding: .7rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table th { background: var(--tint); font-weight: 700; }
+
+/* ---------- Ajánlatkérő sáv az aloldalak alján ---------- */
+.cta-band { background: var(--deep); color: #e8f4f7; border-radius: calc(var(--radius) + 6px); padding: 2rem 1.6rem; display: grid; gap: 1.2rem; align-items: center; position: relative; overflow: hidden; }
+.cta-band::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: var(--grad); }
+.cta-band h2 { color: #fff; margin-bottom: .3rem; }
+.cta-band p { margin: 0; color: #cfe5ea; }
+.cta-band .hero-actions { margin: 0; }
+.cta-band .btn--ghost { color: #fff; border-color: rgba(255,255,255,.6); }
+.cta-band .btn--ghost:hover { background: #fff; color: var(--deep); }
+@media (min-width: 900px) { .cta-band { grid-template-columns: 1.4fr 1fr; padding: 2.6rem 2.6rem; } .cta-band .hero-actions { justify-content: flex-end; } }
+
+/* ---------- Lista-kártyák (útmutatók) ---------- */
+.post-card { display: grid; gap: .8rem; }
+.post-card img { border-radius: 10px; aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.post-card time { font-size: .85rem; color: var(--ink-soft); }
+
+.h-card { font-size: 1.15rem; margin: 0; }
+
+mark.adat { background: #fff1c2; color: #6b4e00; padding: .05em .35em; border-radius: 4px; font-weight: 600; }

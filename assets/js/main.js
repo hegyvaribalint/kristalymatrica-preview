@@ -105,6 +105,13 @@
     if (sel) sel.value = a.getAttribute('data-tema');
   });
 
+  /* ---------- ?tema=tesztlap a címben (pl. a Tesztlap oldalról): téma előre kiválasztva ---------- */
+  try {
+    var kertTema = new URLSearchParams(location.search).get('tema');
+    var temaSel = document.querySelector('select[name="tema"]');
+    if (kertTema && temaSel && temaSel.querySelector('option[value="' + kertTema.replace(/[^a-z]/g, '') + '"]')) temaSel.value = kertTema;
+  } catch (e) { /* régi böngésző */ }
+
   /* ---------- Forrás (UTM, gclid) az ajánlatkéréshez: a CRM-hez ---------- */
   var forras = '';
   try {
