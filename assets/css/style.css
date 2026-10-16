@@ -263,3 +263,5 @@ mark.adat { background: #fff1c2; color: #6b4e00; padding: .05em .35em; border-ra
 .video { margin: 1.6rem 0; }
 .video video { width: 100%; height: auto; display: block; border-radius: var(--radius); background: #0e3a46; box-shadow: var(--shadow); aspect-ratio: 16 / 9; }
 .video figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .5rem; }
+
+.footer-credit a { text-decoration: underline; }
