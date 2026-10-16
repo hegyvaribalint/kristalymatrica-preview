@@ -5,6 +5,7 @@
    MÉRÉS: a Google Tag Manager CSAK süti-hozzájárulás után töltődik be.
    A GA4, a Google Ads és a Meta Pixel címke a GTM-ben van, a kódban nincs.
    Események a dataLayerbe: generate_lead, phone_click, email_click.
+   Jelző: km_oldal = 'uj' (a GTM-címkék feltétele, mert a konténer a régi oldalon is fut).
    ========================================================= */
 (function () {
   'use strict';
@@ -73,6 +74,8 @@
     window.gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted', personalization_storage: 'granted' });
     if (!KM.gtm || KM.elonezet || window.__kmGtm) return;   // előnézetben nincs mérés
     window.__kmGtm = true;
+    // A GTM-konténer a régi WordPress-oldalon is fut: az új címkék CSAK km_oldal = 'uj' esetén indulnak (dupla mérés ellen).
+    window.dataLayer.push({ km_oldal: 'uj' });
     window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     var s = document.createElement('script');
     s.async = true;
