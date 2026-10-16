@@ -253,3 +253,8 @@ ul, ol { padding-left: 1.2em; }
 .h-card { font-size: 1.15rem; margin: 0; }
 
 mark.adat { background: #fff1c2; color: #6b4e00; padding: .05em .35em; border-radius: 4px; font-weight: 600; }
+
+/* ---------- Videó ---------- */
+.video { margin: 1.6rem 0; }
+.video video { width: 100%; height: auto; display: block; border-radius: var(--radius); background: #0e3a46; box-shadow: var(--shadow); aspect-ratio: 16 / 9; }
+.video figcaption { font-size: .88rem; color: var(--ink-soft); margin-top: .5rem; }
