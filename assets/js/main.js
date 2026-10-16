@@ -33,7 +33,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) { setNav(false); toggle.focus(); }
     });
-    window.addEventListener('resize', function () { if (window.innerWidth >= 1080) setNav(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1200) setNav(false); });
   }
 
   /* ---------- Mobil ajánlatkérő sáv: a nyitóblokk után jelenik meg ---------- */

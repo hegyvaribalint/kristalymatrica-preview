@@ -54,7 +54,7 @@ ul, ol { padding-left: 1.2em; }
 .link-arrow::after { content: " →"; }
 
 /* ---------- Gombok ---------- */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .7rem 1.3rem; border-radius: 999px; font: inherit; font-weight: 700; font-size: .98rem; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s; }
+.btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: .7rem 1.3rem; border-radius: 999px; font: inherit; font-weight: 700; font-size: .98rem; text-decoration: none; border: 2px solid transparent; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s; }
 .btn--primary { background: var(--primary); color: #fff; }
 .btn--primary:hover { background: var(--primary-hover); color: #fff; transform: translateY(-1px); }
 .btn--ghost { background: transparent; color: var(--primary); border-color: var(--primary); }
@@ -68,13 +68,14 @@ ul, ol { padding-left: 1.2em; }
 /* ---------- Fejléc ---------- */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid transparent; transition: border-color .2s, box-shadow .2s; }
 .site-header.is-scrolled { border-color: var(--line); box-shadow: 0 2px 12px rgba(15,43,51,.06); }
-.header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: var(--header-h); }
-.brand img { width: 200px; height: auto; }
-.main-nav { display: none; gap: 1.4rem; margin-left: auto; }
-.main-nav a { color: var(--ink); font-weight: 600; font-size: .95rem; text-decoration: none; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.header-inner { display: flex; align-items: center; gap: 1.25rem; min-height: var(--header-h); }
+.brand { flex: none; }
+.brand img { width: 190px; height: auto; }
+.main-nav { display: none; gap: 1.6rem; margin-left: auto; }
+.main-nav a { color: var(--ink); font-weight: 600; font-size: .95rem; text-decoration: none; padding: .3rem 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .main-nav a:hover, .main-nav a[aria-current="page"] { color: var(--primary); border-color: var(--brand); }
-.header-cta { display: none; align-items: center; gap: 1rem; }
-.header-tel { font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.header-cta { display: none; align-items: center; gap: 1rem; flex: none; }
+.header-tel { display: none; font-weight: 700; color: var(--ink); text-decoration: none; white-space: nowrap; }
 .nav-toggle { margin-left: auto; width: 46px; height: 46px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; background: none; border: 0; cursor: pointer; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .2s, opacity .2s; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -84,10 +85,14 @@ ul, ol { padding-left: 1.2em; }
 .mobile-nav.is-open { display: flex; }
 .mobile-nav a:not(.btn) { color: var(--ink); font-weight: 600; text-decoration: none; padding: .7rem 0; border-bottom: 1px solid var(--line); }
 .mobile-nav .btn { margin-top: .6rem; }
-@media (min-width: 1080px) {
+@media (min-width: 1200px) {
   .main-nav, .header-cta { display: flex; }
   .nav-toggle, .mobile-nav, .mobile-nav.is-open { display: none; }
-  .brand img { width: 232px; }
+  .brand img { width: 210px; }
+}
+@media (min-width: 1360px) {
+  .header-tel { display: inline; }
+  .main-nav { gap: 2rem; }
 }
 
 /* ---------- Hero ---------- */
@@ -199,8 +204,8 @@ ul, ol { padding-left: 1.2em; }
 /* ---------- Mobil ajánlatkérő sáv ---------- */
 .call-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 2fr; gap: .6rem; padding: .7rem 14px calc(.7rem + env(safe-area-inset-bottom)); background: rgba(255,255,255,.96); border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgba(15,43,51,.08); transform: translateY(110%); transition: transform .25s; }
 .call-bar.is-visible { transform: none; }
-@media (min-width: 1080px) { .call-bar { display: none; } }
-@media (max-width: 1079px) { body { padding-bottom: 76px; } }
+@media (min-width: 1200px) { .call-bar { display: none; } }
+@media (max-width: 1199px) { body { padding-bottom: 76px; } }
 
 /* ---------- Sütibanner ---------- */
 .cookie { position: fixed; z-index: 60; left: 12px; right: 12px; bottom: 12px; max-width: 520px; margin-left: auto; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem 1.3rem; box-shadow: 0 16px 40px rgba(15,43,51,.18); opacity: 0; transform: translateY(16px); transition: opacity .3s, transform .3s; }
