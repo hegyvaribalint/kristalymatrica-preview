@@ -121,8 +121,11 @@
     var q = new URLSearchParams(location.search);
     var parts = ['utm_source', 'utm_medium', 'utm_campaign', 'gclid', 'fbclid']
       .filter(function (k) { return q.get(k); }).map(function (k) { return k + '=' + q.get(k).slice(0, 100); });
+    // A munkamenet ELSŐ külső forrása számít: belső oldalváltás (blog → kapcsolat) nem írja felül.
+    var kulso = document.referrer && document.referrer.indexOf(location.origin) !== 0;
     if (parts.length) sessionStorage.setItem('km_forras', parts.join('&'));
-    forras = sessionStorage.getItem('km_forras') || (document.referrer ? 'ref=' + document.referrer.slice(0, 150) : 'kozvetlen');
+    else if (!sessionStorage.getItem('km_forras')) sessionStorage.setItem('km_forras', kulso ? 'ref=' + document.referrer.slice(0, 150) : 'kozvetlen');
+    forras = sessionStorage.getItem('km_forras') || 'kozvetlen';
   } catch (e) { /* nem tárolható */ }
 
   /* ---------- reCAPTCHA v3: csak akkor töltjük be, ha a látogató hozzányúl az űrlaphoz ---------- */
